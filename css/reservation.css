@@ -12,6 +12,7 @@ body {
   background-position: left;
   background-repeat: no-repeat;
   color: #F8FAFC;
+  padding-top: 90px;
 }
 
 img {
@@ -44,7 +45,16 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 8%;
-  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .logo a {
@@ -68,13 +78,11 @@ nav a {
   color: #000000;
 }
 
-nav a:focus{
-    color: #D4AF37;
-    border: 1px solid #D4AF37;
-    color: #fff;
-    background-color: #D4AF37;
-    padding: 5px;
-    border-radius: 10px;
+nav a.active {
+  color: #fff;
+  background-color: #D4AF37;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 .header-actions {

@@ -2,20 +2,18 @@ const header = document.querySelector("header");
 const navLinks = document.querySelectorAll("nav a");
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
+let lastScrollY = window.scrollY;
+
 window.addEventListener("scroll", () => {
   if (!header) return;
 
-  if (window.scrollY > 50) {
-    header.style.position = "fixed";
-    header.style.top = "0";
-    header.style.left = "0";
-    header.style.width = "100%";
-    header.style.zIndex = "1000";
-    header.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)";
+  if (window.scrollY > 100 && window.scrollY > lastScrollY) {
+    header.style.transform = "translateY(-100%)";
   } else {
-    header.style.position = "relative";
-    header.style.boxShadow = "none";
+    header.style.transform = "translateY(0)";
   }
+
+  lastScrollY = window.scrollY;
 });
 
 navLinks.forEach(link => {

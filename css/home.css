@@ -10,6 +10,7 @@ body {
   line-height: 1.6;
   background-color: #020617;
   color: #F8FAFC;
+  padding-top: 90px;
 }
 
 img {
@@ -41,9 +42,17 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 8%;
-  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-
 .logo a{
   color: #111827;
 
@@ -64,6 +73,13 @@ nav a {
   font-size: 1rem;
   font-weight: 500;
   color: #000000;
+}
+
+nav a.active {
+  color: #fff;
+  background-color: #D4AF37;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 nav a:focus{
@@ -89,7 +105,7 @@ nav a:focus{
 .header-actions  a:last-child:hover{
   background-color: #D4AF37;
   transition: 0.6s ease;
-  border: 1px solid #fff;
+  border: none;
   color: #F8FAFC;
 }
 .header-actions a {
